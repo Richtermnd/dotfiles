@@ -1,1 +1,5 @@
 @import "colors-rofi-dark"
+
+configuration {
+    font: "Noto Sans Mono 12";
+}
