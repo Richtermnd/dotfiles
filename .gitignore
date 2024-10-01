@@ -7,6 +7,16 @@ pulse/
 wal/
 go/
 htop/
+.config/Outline/
+.config/QtProject.conf
+.config/gtk-3.0/
+.config/kritadisplayrc
+.config/kritarc
+.config/libreoffice/
+.config/obs-studio/
+.config/qt5ct/
+.config/qt6ct/
+.config/systemd/
 mimeapps.list
 obsidian/
 dolphinrc
