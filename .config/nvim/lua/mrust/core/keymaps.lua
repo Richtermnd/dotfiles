@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search higlighting" })
+keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
 
 
 -- window management
@@ -20,3 +21,25 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 for i = 1, 9 do
   vim.api.nvim_set_keymap('n', '<leader>t' .. i, ':tabn ' .. i .. '<CR>', { noremap = true, silent = true })
 end
+
+
+-- Russian keybinds
+keymap.set("n", "р", "h")
+keymap.set("n", "о", "j")
+keymap.set("n", "л", "k")
+keymap.set("n", "д", "l")
+keymap.set("v", "р", "h")
+keymap.set("v", "о", "j")
+keymap.set("v", "л", "k")
+keymap.set("v", "д", "l")
+
+keymap.set("n", "м", "v")
+keymap.set("n", "ф", "a")
+keymap.set("n", "ш", "i")
+keymap.set("n", "у", "e")
+keymap.set("n", "ц", "w")
+keymap.set("n", "и", "b")
+keymap.set("n", "с", "c")
+keymap.set("n", "ч", "x")
+keymap.set("n", "н", "y")
+keymap.set("n", "з", "p")

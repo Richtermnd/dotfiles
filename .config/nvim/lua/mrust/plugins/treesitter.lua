@@ -29,6 +29,7 @@ return {
                 "go", "gomod", "gotmpl", "gowork",
                 "python",
                 "javascript", "html", "css",
+                "sql",
                 "yaml", "json", "dockerfile", "gitignore", "markdown",
                 "bash", "vim", "vimdoc", "lua", "c",
             },

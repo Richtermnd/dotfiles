@@ -16,5 +16,6 @@ return {
                 t("return "), i(1), t(", fmt.Errorf(\"%s: %w\", op, err)")
             })
         })
+       vim.keymap.set("i", "<C-n>", ":lua require(\"luasnip\").jump(1)")
     end
 }

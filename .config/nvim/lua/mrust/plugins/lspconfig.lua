@@ -18,6 +18,7 @@ return {
                     },
                     staticcheck = true,
                     gofumpt = true,
+                    experimentalPostfixCompletions = true,
                 },
             },
         })
@@ -50,6 +51,9 @@ return {
 
         -- setup lua_ls
         lspconfig.lua_ls.setup({})
+
+        -- setup clangd
+        lspconfig.clangd.setup({})
 
         local keymap = vim.keymap
         vim.api.nvim_create_autocmd("LspAttach", {
