@@ -22,6 +22,9 @@ for i = 1, 9 do
   vim.api.nvim_set_keymap('n', '<leader>t' .. i, ':tabn ' .. i .. '<CR>', { noremap = true, silent = true })
 end
 
+-- commenting
+keymap.set("n", "<leader>/", "gcc", { noremap = true, silent = true })
+keymap.set("v", "<leader>/", "gc", { noremap = true, silent = true })
 
 -- Russian keybinds
 keymap.set("n", "р", "h")
