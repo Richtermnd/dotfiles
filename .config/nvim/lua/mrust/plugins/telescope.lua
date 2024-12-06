@@ -20,6 +20,14 @@ return {
             },
             defaults = {
                 cwd = init_dir,
+                file_ignore_patterns = {
+                    "node_modules/",
+                    "venv/",
+                    "dist/",
+                    ".git/",
+                    "build/",
+                    "__pycache__/"
+                },
                 path_display = { "smart" },
                 mappings = {
                     i = {

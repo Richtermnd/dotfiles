@@ -22,9 +22,19 @@ for i = 1, 9 do
   vim.api.nvim_set_keymap('n', '<leader>t' .. i, ':tabn ' .. i .. '<CR>', { noremap = true, silent = true })
 end
 
+-- move in insert mode
+-- keymap.set("i", "<M-h>", "<C-o>h")
+-- keymap.set("i", "<M-j>", "<C-o>j")
+-- keymap.set("i", "<M-k>", "<C-o>k")
+-- keymap.set("i", "<M-l>", "<C-o>l")
+
 -- commenting
 keymap.set("n", "<leader>/", "gcc", { noremap = true, silent = true })
 keymap.set("v", "<leader>/", "gc", { noremap = true, silent = true })
+
+-- diagnostic
+keymap.set("n", "<leader>dd", vim.diagnostic.open_float)
+keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Russian keybinds
 keymap.set("n", "р", "h")

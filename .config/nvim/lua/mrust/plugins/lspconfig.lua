@@ -1,3 +1,15 @@
+local function get_virtualenv_path()
+    local venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')  -- Ищем папку venv в текущей директории
+    if venv_path ~= '' then
+        return venv_path .. '/bin/python'  -- Для Linux/macOS
+    end
+    venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')  -- Для Windows
+    if venv_path ~= '' then
+        return venv_path .. '\\Scripts\\python.exe'  -- Для Windows
+    end
+    return nil
+end
+
 return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
@@ -47,7 +59,14 @@ return {
 
 
         -- setup pyright
-        lspconfig.pyright.setup({})
+        lspconfig.pyright.setup({
+            on_init = function(client)
+                local python_path = get_virtualenv_path()
+                if python_path then
+                    client.config.settings.python.pythonPath = python_path
+                end
+            end
+        })
 
         -- setup lua_ls
         lspconfig.lua_ls.setup({})
