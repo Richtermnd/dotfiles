@@ -1,11 +1,11 @@
 local function get_virtualenv_path()
-    local venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')  -- Ищем папку venv в текущей директории
+    local venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')
     if venv_path ~= '' then
-        return venv_path .. '/bin/python'  -- Для Linux/macOS
+        return venv_path .. '/bin/python'
     end
-    venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')  -- Для Windows
+    venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')
     if venv_path ~= '' then
-        return venv_path .. '\\Scripts\\python.exe'  -- Для Windows
+        return venv_path .. '\\Scripts\\python.exe'
     end
     return nil
 end
@@ -31,7 +31,7 @@ return {
                     staticcheck = true,
                     gofumpt = true,
                     experimentalPostfixCompletions = true,
-                },
+                }
             },
         })
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -104,7 +104,7 @@ return {
                 keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
                 opts.desc = "Show buffer diagnostics"
-                keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+                keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=nil<CR>", opts) -- show  diagnostics for file
 
                 opts.desc = "Show line diagnostics"
                 keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line

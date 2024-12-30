@@ -20,3 +20,6 @@ require("lazy").setup({ { import = "mrust.plugins" }, { import = "mrust.plugins.
         notify = false,
     },
 })
+
+
+vim.cmd("colorscheme no-clown-fiesta")

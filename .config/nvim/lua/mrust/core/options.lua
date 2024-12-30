@@ -2,6 +2,7 @@ local opt = vim.opt
 
 opt.relativenumber = true
 opt.number = true
+opt.equalalways = false
 
 -- tabs & indentation
 opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
@@ -40,3 +41,4 @@ opt.scrolloff = 8
 
 opt.autochdir = false
 opt.formatoptions:remove("c")
+

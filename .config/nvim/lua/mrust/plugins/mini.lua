@@ -13,8 +13,5 @@ return {
                 animation = indentscope.gen_animation.none(),
             }
         })
-        local files = require("mini.files")
-        files.setup({})
-        vim.keymap.set("n", "<leader>ee", files.open)
     end
 }
