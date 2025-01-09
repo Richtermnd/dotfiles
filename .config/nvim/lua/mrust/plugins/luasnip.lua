@@ -17,8 +17,8 @@ return {
             }),
             s("iferr", {
                 t("if err != nil {"),
-                t("    return"), i(1),
-                t("}")
+                t({ "", "    return " }), i(1),
+                t({ "", "}" })
             })
         })
        vim.keymap.set("i", "<C-n>", ":lua require(\"luasnip\").jump(1)")
