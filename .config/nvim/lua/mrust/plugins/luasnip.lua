@@ -19,8 +19,14 @@ return {
                 t("if err != nil {"),
                 t({ "", "    return " }), i(1),
                 t({ "", "}" })
-            })
+            }),
+            s("unimplemeted", { t("panic(\"not implemented\")")})
         })
-       vim.keymap.set("i", "<C-n>", ":lua require(\"luasnip\").jump(1)")
+
+        vim.keymap.set({"i", "s"}, "<C-n>", function()
+            if ls.choice_active() then
+                ls.change_choice(1)
+            end
+        end, {silent = true})
     end
 }
