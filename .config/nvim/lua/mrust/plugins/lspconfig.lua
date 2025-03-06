@@ -1,3 +1,5 @@
+
+
 local function get_virtualenv_path()
     local venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')
     if venv_path ~= '' then
@@ -65,11 +67,16 @@ return {
         })
         -- setup hls 
         lspconfig.hls.setup{}
+
         -- setup lua_ls
         lspconfig.lua_ls.setup({})
 
         -- setup clangd
         lspconfig.clangd.setup({})
+
+        lspconfig.ts_ls.setup({})
+
+        lspconfig.csharp_ls.setup{}
 
         local keymap = vim.keymap
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -91,8 +98,8 @@ return {
                 opts.desc = "Show LSP implementations"
                 keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
-                opts.desc = "Show LSP type definitions"
-                keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+                -- opts.desc = "Show LSP type definitions"
+                -- keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
                 opts.desc = "See available code actions"
                 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection

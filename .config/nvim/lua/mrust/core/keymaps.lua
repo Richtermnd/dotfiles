@@ -41,3 +41,8 @@ keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnost
 keymap.set("t", "<ESC>", "<C-\\><C-N>")
 keymap.set("n", "<leader>st", utils.open_split_term)
 keymap.set("n", "<leader>tt", utils.open_tab_term)
+
+-- quickfix
+keymap.set("n", "<leader>co", "<cmd>copen<CR>")
+keymap.set("n", "<leader>cn", "<cmd>cnext<CR>")
+keymap.set("n", "<leader>cp", "<cmd>cprevious<CR>")

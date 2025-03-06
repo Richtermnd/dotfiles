@@ -1,6 +1,8 @@
 local opt = vim.opt
 
 opt.relativenumber = true
+opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
+opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.number = true
 opt.equalalways = false
 
@@ -41,4 +43,10 @@ opt.scrolloff = 8
 
 opt.autochdir = false
 opt.formatoptions:remove("c")
+
+opt.isk = "@,48-57,192-255"
+
+---@diagnostic disable-next-line: missing-fields
+opt.listchars = { tab = '| ', trail = '-', leadmultispace = "|   |   "}  -- no more mini.indentoscope
+opt.list = true
 

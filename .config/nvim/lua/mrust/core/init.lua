@@ -1,3 +1,3 @@
 require("mrust.core.options")
 require("mrust.core.keymaps")
--- require("mrust.core.commands")
+require("mrust.core.notes")

@@ -3,9 +3,9 @@ return {
     config = function ()
         require("no-clown-fiesta").setup({
             transparent = true,
-            type = {
-                fg="#8787AF"
+            styles = {
             }
         })
+        return require("no-clown-fiesta").load()
     end
 }

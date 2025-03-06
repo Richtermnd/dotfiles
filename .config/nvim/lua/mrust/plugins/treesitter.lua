@@ -4,11 +4,11 @@ return {
     build = ":TSUpdate",
     dependencies = {
         "windwp/nvim-ts-autotag",
+        "nvim-treesitter/playground"
     },
     config = function()
         -- import nvim-treesitter plugin
         local treesitter = require("nvim-treesitter.configs")
-
         -- configure treesitter
         treesitter.setup({ -- enable syntax highlighting
             highlight = {
@@ -22,9 +22,8 @@ return {
             },
             sync_install = false,
             auto_install = false,
-            ignore_install = {},
             modules = {},
-            -- ensure these language parsers are installed
+            ignore_install = {},
             ensure_installed = {
                 "go", "gomod", "gotmpl", "gowork",
                 "python",
@@ -42,6 +41,9 @@ return {
                     node_decremental = "<bs>",
                 },
             },
+            injections = {
+                enable = true,
+            }
         })
     end,
 }

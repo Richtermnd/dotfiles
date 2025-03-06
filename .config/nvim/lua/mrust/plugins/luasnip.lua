@@ -20,7 +20,8 @@ return {
                 t({ "", "    return " }), i(1),
                 t({ "", "}" })
             }),
-            s("unimplemeted", { t("panic(\"not implemented\")")})
+            s("unimplemeted", { t("panic(\"not implemented\")")}),
+            s("todo", { t("panic(\"todo: "), i(1), t("\")") })
         })
 
         vim.keymap.set({"i", "s"}, "<C-n>", function()

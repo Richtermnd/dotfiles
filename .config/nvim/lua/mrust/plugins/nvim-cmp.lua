@@ -50,6 +50,18 @@ return {
                 { name = "path" }, -- file system paths
             }),
 
+            sorting = {
+                comparators = {
+                    cmp.config.compare.sort_text, -- this needs to be 1st
+                    cmp.config.compare.offset,
+                    cmp.config.compare.exact,
+                    cmp.config.compare.score,
+                    cmp.config.compare.kind,
+                    cmp.config.compare.length,
+                    cmp.config.compare.order,
+                },
+                priority_weight=1
+            },
             -- configure lspkind for vs-code like pictograms in completion menu
             ---@diagnostic disable-next-line: missing-fields
             formatting = {

@@ -34,7 +34,7 @@ return {
                     i = {
                         ["<C-k>"] = actions.move_selection_previous, -- move to prev result
                         ["<C-j>"] = actions.move_selection_next, -- move to next result
-                        ["<C-q>"] = actions.close,
+                        ["<C-q>"] = actions.send_to_qflist,
                     },
                 },
             }),
@@ -45,42 +45,8 @@ return {
         local builtin = require("telescope.builtin")
         local keymap = vim.keymap -- for conciseness
 
-        -- local function lsp_actions()
-        --     require('telescope.pickers').new({}, {
-        --         prompt_title = 'LSP Actions',
-        --         finder = require('telescope.finders').new_table({
-        --             results = {
-        --                 { "Go to Definition", builtin.lsp_definitions },
-        --                 { "Find References", builtin.lsp_references },
-        --                 { "Document Symbols", builtin.lsp_document_symbols },
-        --                 { "Workspace Symbols", builtin.lsp_workspace_symbols },
-        --                 { "Hover Documentation", vim.lsp.buf.hover },
-        --                 { "Rename Symbol", vim.lsp.buf.rename },
-        --                 { "Code Actions", vim.lsp.buf.code_action },
-        --             },
-        --             entry_maker = function(entry)
-        --                 return {
-        --                     value = entry,
-        --                     display = entry[1],
-        --                     ordinal = entry[1],
-        --                     fn = entry[2],
-        --                 }
-        --             end,
-        --         }),
-        --         sorter = require('telescope.config').values.generic_sorter({}),
-        --         attach_mappings = function(_, map)
-        --             map('i', '<CR>', function(prompt_bufnr)
-        --                 local selection = require('telescope.actions.state').get_selected_entry()
-        --                 require('telescope.actions').close(prompt_bufnr)
-        --                 selection.value()
-        --             end)
-        --             return true
-        --         end,
-        --     }):find()
-        -- end
-
         local function w(f)
-            return function () f({cwd=init_dir}) end
+            return function () f({cwd=init_dir, hidden=true}) end
         end
 
         keymap.set("n", "<leader>ls", function()

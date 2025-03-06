@@ -7,6 +7,8 @@ return {
             keymaps = {
                 ["L"] = {"actions.select"},
                 ["H"] = {"actions.parent"},
+                ["<C-h>"] = {"<cmd>TmuxNavigateLeft<Enter>"},
+                ["<C-l>"] = {"<cmd>TmuxNavigateRight<Enter>"},
             }
         })
 

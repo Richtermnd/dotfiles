@@ -23,7 +23,6 @@ local function open_term()
     vim.api.nvim_buf_create_user_command(0, "TermHide", function ()
         vim.api.nvim_win_hide(0)
     end, {})
-
     vim.api.nvim_buf_set_keymap(0, "n", "<C-d>", ":TermHide<CR>", {})
 end
 
@@ -34,49 +33,8 @@ end
 
 M.open_tab_term = function ()
     vim.cmd("tabnew")
+    
     open_term()
 end
-
-
-local function interactiveList()
-    
-end
-
-M.lsp_actions = function (opts)
-    -- Create float window under cursor
-    opts = opts or {}
-    local buf = vim.api.nvim_create_buf(false, true)
-
-    local cursor_position = vim.api.nvim_win_get_cursor(0)
-    local win_position = vim.api.nvim_win_get_position(0)
-    local row = win_position[1] + cursor_position[1] - vim.fn.line("w0") + 1;
-    local col = win_position[2] + cursor_position[2];
-
-    vim.api.nvim_open_win(buf, true, {
-        relative="editor",
-        width = 20,
-        height = 5,
-        row = row,
-        col = col,
-        style = "minimal",
-        border = "single",
-    })
-
-    -- interactive list
-    local actions = {
-        {
-            name = "rename",
-            action = vim.lsp.buf.rename
-        },
-        {
-            name = "references",
-            action = vim.lsp.buf.references
-        }
-    }
-
-    -- vim.api.nvim_buf_set_lines(buf, 0, -1, false, )
-end
-
-vim.api.nvim_create_user_command("LspActions", M.lsp_actions, {})
 
 return M

@@ -7,8 +7,8 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode",
+        "workspaces",
+        // "hyprland/mode",
         "hyprland/scratchpad",
         "custom/media"
     ],
@@ -24,9 +24,6 @@
         "clock",
         "custom/power"
     ],
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -94,6 +91,6 @@
         "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous",
-        "exec": "$HOME/.config/hypr/themes/coolcooldeath/mediaplayer.py", // Script in resources/custom_modules folder
+        "exec": "$HOME/.config/hypr/themes/marceline/mediaplayer.py", // Script in resources/custom_modules folder
     }
 }
