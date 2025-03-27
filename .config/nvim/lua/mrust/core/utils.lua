@@ -17,6 +17,9 @@ local function open_term()
     if not vim.api.nvim_buf_is_valid(term_buffer) then
         vim.cmd("term")
         term_buffer = vim.api.nvim_get_current_buf()
+        vim.api.nvim_buf_set_option(term_buffer, "scrolloff", 0)
+        vim.api.nvim_buf_set_option(term_buffer, "number", false)
+        vim.api.nvim_buf_set_option(term_buffer, "relativenumber", false)
     end
 
     vim.api.nvim_win_set_buf(vim.api.nvim_get_current_win(), term_buffer)

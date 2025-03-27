@@ -1,3 +1,4 @@
+export DOTNET_CLI_TELEMETRY_OPTOUT=1;
 export GOPATH="/home/mrust/go"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/java"
 export EDITOR=nvim
