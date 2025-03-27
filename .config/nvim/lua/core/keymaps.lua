@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-local utils = require("mrust.core.utils")
+local utils = require("core.utils")
 -- Alias
 local keymap = vim.keymap
 

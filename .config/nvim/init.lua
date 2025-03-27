@@ -1,2 +1,2 @@
-require("mrust.core")
-require("mrust.lazy")
+require("core")
+require("lazy_init")
