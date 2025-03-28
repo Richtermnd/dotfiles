@@ -16,7 +16,7 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        -- "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
         { "folke/neodev.nvim", opts = {} },
     },
@@ -25,7 +25,7 @@ return {
 
         -- setup gopls
         lspconfig.gopls.setup({
-            capabilities = vim.lsp.protocol.make_client_capabilities(),
+            capabilities = require("cmp_nvim_lsp").default_capabilities(),
             settings = {
                 gopls = {
                     experimentalPostfixCompletions = true,
@@ -120,9 +120,7 @@ return {
                 keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
                 opts.desc = "Show documentation for what is under cursor"
-                keymap.set("n", "K", function ()
-                    vim.lsp.buf.hover({ width=100 })
-                end, opts) -- show documentation for what is under cursor
+                keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
                 opts.desc = "Restart LSP"
                 keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
