@@ -121,7 +121,7 @@ return {
 
                 opts.desc = "Show documentation for what is under cursor"
                 keymap.set("n", "K", function ()
-                    vim.lsp.buf.hover({ width=100 })
+                    vim.lsp.buf.hover({ width=100, border = "single", })
                 end, opts) -- show documentation for what is under cursor
 
                 opts.desc = "Restart LSP"

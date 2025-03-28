@@ -1,6 +1,8 @@
 return {
     "saghen/blink.cmp",
-    dependencies = { "L3MON4D3/LuaSnip" },
+    dependencies = {
+        "L3MON4D3/LuaSnip",
+    },
 
     version = '1.*',
 
@@ -8,11 +10,16 @@ return {
         keymap = {
             ["<C-space>"] = { "show" },
             ["<ESC>"] = { "cancel", "fallback" },
-            ["<Tab>"] = { "accept" },
+            ["<Tab>"] = { "accept", "fallback" },
             ["<C-k>"] = { "select_prev", "fallback" },
             ["<C-j>"] = { "select_next", "fallback" },
-            ["<C-h>"] = { "hide_documentation", "fallback" },
-            ["<C-l>"] = { "show_documentation", "fallback" },
+            ["<C-l>"] = { function(cmp)
+                if require("blink.cmp").is_documentation_visible() then
+                    return cmp.hide_documentation()
+                else
+                    return cmp.show_documentation()
+                end
+            end, "fallback" },
         },
 
         snippets = { preset = "luasnip"},
@@ -25,7 +32,7 @@ return {
             keyword = { range = "full" },
             list = { selection = { preselect = true } },
             menu = {
-                auto_show = false,
+                auto_show = true,
                 border = "single"
             },
             documentation = {
@@ -42,7 +49,15 @@ return {
         },
 
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    -- make lazydev completions top priority (see `:h blink.cmp`)
+                    score_offset = 100,
+                },
+            },
         },
 
         fuzzy = { implementation = "prefer_rust_with_warning" }
