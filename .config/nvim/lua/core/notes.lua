@@ -37,8 +37,7 @@ local function update_tags()
     end
 end
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = glob_notes_dir.."*.txt",
-    callback = update_tags
-})
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--     pattern = glob_notes_dir.."*.txt",
+-- })
 

@@ -140,5 +140,6 @@ if [ -f '/home/mrust/yandex-cloud/completion.zsh.inc' ]; then source '/home/mrus
 
 
 [ -f "/home/mrust/.ghcup/env" ] && . "/home/mrust/.ghcup/env" # ghcup-env
+
 # fortune | cowsay -r
 cat ~/amogus.txt

@@ -1,5 +1,3 @@
-
-
 local function get_virtualenv_path()
     local venv_path = vim.fn.finddir('venv', vim.fn.expand('%:p:h') .. ';')
     if venv_path ~= '' then
