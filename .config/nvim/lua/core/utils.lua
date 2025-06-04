@@ -11,7 +11,6 @@ M.dwindle_split = function ()
     end
 end
 
-
 local term_buffer = -1
 local function open_term()
     if not vim.api.nvim_buf_is_valid(term_buffer) then
