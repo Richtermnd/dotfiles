@@ -2,7 +2,7 @@ return {
     name = "luals",
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
-    root_dir = { "init.lua" },
+    -- root_dir = { "init.lua" },
     capabilities = vim.lsp.protocol.make_client_capabilities(),
     settings = {
         Lua = {

@@ -48,32 +48,6 @@ return {
         local function w(f)
             return function () f({cwd=init_dir, hidden=true}) end
         end
-
-        keymap.set("n", "<leader>ls", function()
-            local lsp_actions = {
-                { name = 'Go to Definition', fn = vim.lsp.buf.definition },
-                { name = 'Find References', fn = vim.lsp.buf.references },
-                { name = 'Hover Documentation', fn = vim.lsp.buf.hover },
-                { name = 'Rename Symbol', fn = vim.lsp.buf.rename },
-                { name = 'Code Actions', fn = vim.lsp.buf.code_action },
-                { name = 'Incomming Calls', fn = vim.lsp.buf.incoming_calls },
-                { name = 'Show Diagnostics', fn = vim.diagnostic.open_float },
-            }
-
-            local items = {}
-            for i, action in ipairs(lsp_actions) do
-                items[i] = action.name
-            end
-
-            vim.ui.select(items, { prompt = 'LSP Actions' }, function(choice)
-                for _, action in ipairs(lsp_actions) do
-                    if action.name == choice then
-                        action.fn()
-                        return
-                    end
-                end
-            end)
-        end, { desc = "LSP actions" })
         keymap.set("n", "<leader>ff", w(builtin.find_files), { desc = "Find files" })
         keymap.set("n", "<leader>fg", w(builtin.live_grep), { desc = "Live grep" })
         keymap.set("n", "<leader>fb", w(builtin.buffers), { desc = "Buffers" })

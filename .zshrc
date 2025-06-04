@@ -103,10 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias k="kubectl"
-alias icat="kitten icat"
+if [ -f ".zsh_aliases" ]; then source "$HOME/.zsh_aliases"; fi
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/git:\1/p'
@@ -143,3 +140,4 @@ if [ -f '/home/mrust/yandex-cloud/completion.zsh.inc' ]; then source '/home/mrus
 
 # fortune | cowsay -r
 cat ~/amogus.txt
+

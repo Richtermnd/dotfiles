@@ -4,7 +4,6 @@ return {
     filetypes = { "go" },
     root_dir = vim.fs.dirname(vim.fs.find({ 'go.mod', '.git' }, { upward = true })[1]),
     capabilities = vim.lsp.protocol.make_client_capabilities(),
-    -- capabilities = require("blink.cmp").get_lsp_capabilities(),
     settings = {
         gopls = {
             experimentalPostfixCompletions = true,
@@ -15,7 +14,4 @@ return {
             gofumpt = true,
         }
     },
-    -- on_attach = function(client, bufnr)
-
-    -- end
 }

@@ -1,0 +1,4 @@
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias k="kubectl"
+alias icat="kitten icat"
