@@ -50,3 +50,4 @@ opt.isk = "@,48-57,192-255"
 opt.listchars = { tab = '| ', trail = '-', leadmultispace = "|   |   "}  -- no more mini.indentoscope
 opt.list = true
 
+opt.winborder = "rounded"

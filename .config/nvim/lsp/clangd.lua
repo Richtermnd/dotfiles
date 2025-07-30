@@ -14,17 +14,4 @@ return {
         offsetEncoding = { 'utf-8', 'utf-16' },
     },
 }
-    -- commands = {
-    --     ClangdSwitchSourceHeader = {
-    --         function()
-    --             switch_source_header(0)
-    --         end,
-    --         description = 'Switch between source/header',
-    --     },
-    --     ClangdShowSymbolInfo = {
-    --         function()
-    --             symbol_info()
-    --         end,
-    --         description = 'Show symbol info',
-    --     },
 

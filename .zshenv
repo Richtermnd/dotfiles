@@ -1,5 +1,5 @@
 export DOTNET_CLI_TELEMETRY_OPTOUT=1;
-export GOPATH="/home/mrust/go"
+export GOPATH="/home/mrust/programming/go"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
 export EDITOR=nvim
 

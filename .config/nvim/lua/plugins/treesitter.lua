@@ -27,6 +27,7 @@ return {
             ensure_installed = {
                 "go", "gomod", "gotmpl", "gowork",
                 "python",
+                "c_sharp",
                 "javascript", "html", "css",
                 "sql",
                 "yaml", "json", "dockerfile", "gitignore", "markdown",

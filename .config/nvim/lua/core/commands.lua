@@ -1,3 +1,4 @@
+-- AI code, xd;
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.go",
     callback = function()
@@ -15,3 +16,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format({async = false})
     end
 })
+
+
+vim.api.nvim_create_user_command("Allign", "!column -t -s= -o=", { range = true })
