@@ -4,6 +4,12 @@ return {
     config = function ()
         require("oil").setup({
             default_file_explorer = true,
+            columns = {
+                "permissions",
+                "size",
+                "mtime",
+                "icon",
+            },
             keymaps = {
                 ["L"] = {"actions.select"},
                 ["H"] = {"actions.parent"},
