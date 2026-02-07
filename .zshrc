@@ -113,7 +113,7 @@ parse_git_branch() {
 PROMPT="%F{cyan}%n%f:%F{magenta}%~%f
 %F{green}$%f "
 RPROMPT=$'%{\e[1A%}%F{red}$(parse_git_branch)%f%{\e[1B%}'
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -139,6 +139,6 @@ if [ -f '/home/mrust/yandex-cloud/completion.zsh.inc' ]; then source '/home/mrus
 [ -f "/home/mrust/.ghcup/env" ] && . "/home/mrust/.ghcup/env" # ghcup-env
 
 # fortune | cowsay -r
-cat ~/other/amogus.txt
+# cat ~/other/amogus.txt
 
 bindkey -e

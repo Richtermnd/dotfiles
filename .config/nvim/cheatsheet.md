@@ -10,7 +10,6 @@ CTRL-o go back
 
 ## moving
 ---
-
 f<char> - search <char> forward the cursor
 F<char> - search <char> backward the cursor
 t<char> - same as f<char> but place cursor before

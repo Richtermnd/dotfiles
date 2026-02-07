@@ -1,0 +1,88 @@
+// -*- mode: jsonc -*-
+{
+	"position": "top",
+	"height": 35,
+	"spacing": 5,
+
+	"modules-left": [
+		"dwl/tags",
+		"dwl/window"
+	],
+
+	"modules-center": [
+		"clock"
+	],
+
+	"modules-right": [
+		"tray",
+		"wireplumber",
+		"battery"
+	],
+	"ext/workspaces": {
+		"format": "{icon}",
+		"ignore-hidden": true,
+		"on-click": "activate",
+		"on-click-right": "deactivate",
+		"sort-by-id": true
+	},
+	"dwl/window": {
+		"format": "[{layout}] {app_id}"
+	},
+	"clock": {
+		"interval": 1,
+		"format": "{:%T | %D | %a}",
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"calendar": {
+			"mode"          : "month",
+			"on-scroll"     : 1,
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions":  {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+	"wireplumber": {
+		"format": "{volume}% {icon}  {format_source}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-full": "{capacity}% {icon}",
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	// "network": {
+	//     "format-wifi": "{essid} ({signalStrength}%) ",
+	//     "format-ethernet": "{ipaddr}/{cidr} ",
+	//     "tooltip-format": "{ifname} via {gwaddr} ",
+	//     "format-linked": "{ifname} (No IP) ",
+	//     "format-disconnected": "Disconnected",
+	//     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+	// }
+}
