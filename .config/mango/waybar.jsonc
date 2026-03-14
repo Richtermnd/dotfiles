@@ -77,6 +77,9 @@
 		"format-alt": "{time} {icon}",
 		"format-icons": ["", "", "", "", ""]
 	},
+	"tray": {
+		"spacing": 10
+	}
 	// "network": {
 	//     "format-wifi": "{essid} ({signalStrength}%) ",
 	//     "format-ethernet": "{ipaddr}/{cidr} ",

@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ "bellinitte/uxntal.vim" },
 	{ "aktersnurra/no-clown-fiesta.nvim", opts = { transparent = true } },
 	{ "tpope/vim-fugitive" },
 	{ "tpope/vim-surround" },
@@ -123,7 +124,7 @@ require("lazy").setup({
 			snippets = { preset = 'luasnip' },
 			sources = {
 				default = { 'lsp', 'buffer', 'snippets', 'path' },
-				providers = { buffer = { opts = { get_bufnrs = vim.api.nvim_list_bufs } } },  -- xdd
+				-- providers = { buffer = { opts = { get_bufnrs = vim.api.nvim_list_bufs } } },  -- xdd
 			},
 			fuzzy = { implementation = "lua" },
 		},
@@ -145,7 +146,7 @@ require("lazy").setup({
 			ensure_installed = {
 				"go", "gomod", "gotmpl", "gowork",
 				"python",
-				"c_sharp",
+				"c_sharp", "kotlin",
 				"javascript", "html", "css",
 				"sql",
 				"yaml", "json", "dockerfile", "gitignore", "markdown",
